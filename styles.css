@@ -1,3 +1,44 @@
 body{
     background-color: lightsteelblue;
 }
+
+h1 {
+    text-align: center;
+}
+
+.gameTiles {
+    background-color: lightslategray;
+    display: flex;
+    gap: 10px;
+    gap: 10px 20px;
+    column-gap: 20px;
+    align-content: flex-start;
+}
+
+#tile{
+    background-color: darkolivegreen;
+    box-sizing: border-box; 
+    border-radius: 5px;
+    height: 100%x;
+    width: 100%;
+    border: solid 1px white;
+    padding: 40px;
+    display: inline-flex;
+    
+
+}
+#buttons{
+    background-color: darksalmon;
+    height: 1fr;
+    width: 1fr;
+    display: flex;
+    position: left;
+}
+.buttons{
+    position: left;
+    display: flex;
+    flex-direction: column;
+    border: 20px;
+    align-items: left;
+}
+
