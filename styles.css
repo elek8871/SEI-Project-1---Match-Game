@@ -27,18 +27,23 @@ h1 {
     
 
 }
-#buttons{
-    background-color: darksalmon;
-    height: 1fr;
-    width: 1fr;
+.gameButtons{
+    background-color: hotpink;
     display: flex;
-    position: left;
-}
-.buttons{
-    position: left;
-    display: flex;
-    flex-direction: column;
-    border: 20px;
+    height: 100vh;
+    width: 200px;
+    gap: 25px;
+    justify-content: center;
     align-items: left;
+    flex-direction: column;
+}
+.button{
+    background-color: aquamarine;
+    display: flex;
+    border: 10px solid darkorange;
+    border-radius: 15px;
+    height: 100px;
+    width: 180x;
+   
 }
 
