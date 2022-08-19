@@ -7,8 +7,23 @@
     <title>Memory Match Game</title>
     <link rel = "stylesheet" href ="./styles.css">
 </head>
+
 <body>
+    
     <h1 class = "header"> Memory Match</h1>
+    <div class = 'flexCenter'>
+    <div class = "gameScreen">
+    <!-- buttons -->
+    <div class="gameButtons">
+        <button class="button" id="gamePlay"> How To Play</button>
+        <button class="button" id="Start Game"> Start Game</button>
+        <button class="button" id="Shuffle Tiles">Shuffle Tiles</button>
+    <!-- button for choosing difficulty -->
+    <!--<button class="button" id="Choose Difficulty"> Choose Difficulty</button> -->
+    <!-- button for multiple deck styles -->
+    <!-- <button class="button" id="Choose Deck"> Choose Deck</button> -->
+    </div>
+
     <div class = gameBoard  id="gameBoard">
     <!-- put tiles here -->
     <div class ="gameTiles">
@@ -30,18 +45,9 @@
         <div class = "eachTile" id="tile"> Tile </div>
          <!-- can add more tiles if I get to adding more difficulty  -->
     </div>
-
-    <!-- buttons -->
-    <div class="gameButtons">
-        <button class="button" id="gamePlay"> How To Play</button>
-        <button class="button" id="Start Game"> Start Game</button>
-        <button class="button" id="Shuffle Tiles">Shuffle Tiles</button>
-<!-- button for choosing difficulty -->
-<!--<button class="button" id="Choose Difficulty"> Choose Difficulty</button> -->
-<!-- button for multiple deck styles -->
-<!-- <button class="button" id="Choose Deck"> Choose Deck</button> -->
     </div>
-   </div> 
+    </div>
+    </body>
 </body>
 <script src="./index.js"></script>
 </html>
