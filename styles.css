@@ -5,7 +5,11 @@ body{
 /* top of screen */
 h1 {
     text-align: center;
+    font-size: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:indigo;
 }
+/* screen below Header */
 .flexCenter{
     display: flex;
     justify-content: center;
@@ -18,7 +22,7 @@ h1 {
 /* container for game tiles */
 .gameTiles {
     
-    height: 1000px;
+    height: 100vh;
     width: 1000px;
     background-color: lightgreen;
     display: flex;
@@ -27,17 +31,20 @@ h1 {
     column-gap: 20px;
     align-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     
 }
 .eachTile{
     background-color: darkolivegreen;
     box-sizing: border-box; 
     border-radius: 5px;
-    height: 120px;
-    width: 120px;
+    height: 180px;
+    width: 180px;
     border: solid 1px white;
-    padding: 40px;
+    padding: 20px;
     display: inline-flex;
+    margin-left: 20px;
+    
 
     
 }
@@ -47,10 +54,9 @@ h1 {
     background-color: hotpink;
     display: flex;
     height: 100vh;
-    width: 200px;
+    width: 300px;
     gap: 25px;
     justify-content: center;
-    /* align-items: left; */
     flex-direction: column;
 
 }
@@ -61,7 +67,7 @@ h1 {
     border: 10px solid darkorange;
     border-radius: 15px;
     height: 100px;
-    width: 180x;
+    width: 150x;
    
 }
 
