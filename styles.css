@@ -34,7 +34,7 @@ h1 {
     justify-content: center;
     
 }
-.eachTile{
+.tile{
     background-color: darkolivegreen;
     box-sizing: border-box; 
     border-radius: 5px;
@@ -45,7 +45,9 @@ h1 {
     display: inline-flex;
     margin-left: 20px;
     }
-
+.tile.flip{
+    transform: rotateY(180deg);
+}
 
 
 
