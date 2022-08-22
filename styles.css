@@ -21,7 +21,6 @@ h1 {
  }
 /* container for game tiles */
 .gameTiles {
-    
     height: 100vh;
     width: 1000px;
     background-color: lightgreen;
@@ -45,8 +44,19 @@ h1 {
     display: inline-flex;
     margin-left: 20px;
     }
-.tile.flip{
+
+
+.back {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    visibility: hidden; 
+    transform: rotateY(180deg); 
+}
+
+.flipTile {
     transform: rotateY(180deg);
+    visibility: visible;
 }
 
 
@@ -71,6 +81,7 @@ h1 {
     border-radius: 15px;
     height: 100px;
     width: 150x;
+    text-align: center;
    
 }
 

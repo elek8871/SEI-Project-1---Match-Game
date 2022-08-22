@@ -1,15 +1,32 @@
-//  needed game buttons:
-const rules = document.getElementById("gameRules")
+document.addEventListener('DOMContentLoaded', () => {
+
+
+// changes text in button to display rules  
+const howToPlay = document.getElementById("gameRules")
+howToPlay.onclick = function rules() {
+   howToPlay.innerText = "Click on any tile to flip the card over. Choose another tile to look for a match. Matching tiles will stay flipped over, otherwise the tile will flip back. Keep clicking until you have matched all the tiles."
+}
+//  document.getElementsByClassName("displayRules")
 const startGame = document.getElementById("gameStart")
 const shuffleTiles = document.getElementById("tileShuffle")
 
+// flip tiles over on click
+const gameTiles = document.getElementsByClassName("tile")
+let gameTilesArray =[...gameTiles]
+//   these both return an array, if i grab by parent class it returns 0 items in the array
 
-//
+for (let i = 0; i< gameTilesArray.length; i++) {
+    gameTilesArray[i].addEventListener("click", flip)
+}
+function flip(event) {
+    console.dir(event.target.children[0])
+    event.target.children[0].classList.toggle("flipTile")
+}
 
-let tileArray = document.getElementsByClassName("#tile")
-// array of get tiles- not sure how to make the array an empty array of tiles
-//const tiles = tileArray.length
-//console.log(tiles) this gives me a value of 0
+
+
+
+
 
 // function to randomize tiles
 const randomize = ( )=>{
@@ -18,16 +35,9 @@ const randomize = ( )=>{
     return randomize
     //console.log(randomize)
 }
-const gameTiles = document.getElementsByClassName("#tile")
-
-const flipTiles = () =>{
-    this.classList.toggle ('flip')
-// gameTiles.forEach(tile => tile.addEventListener("click", flipTiles))
-//or
-// gameTiles.forEach(tileArray => tileArray.addEventListener("click", flipTiles))
-}
 
 
+})
 //  check for match
 // if (flipped tiles are ===){
 //     leave backside up
@@ -38,5 +48,5 @@ const flipTiles = () =>{
 // true = either remove tile or leave back side up
 // false = flip tile back over
 
-let displayRules = document.getElementById("gameRules")
-rules.addEventListener("click", displayRules)
+
+// thanks to https://aadaobi.medium.com/building-a-memory-matching-game-in-javascript-48e792c7b563 for the handy ...gameTiles array method on line 12
