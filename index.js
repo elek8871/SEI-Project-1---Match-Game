@@ -1,20 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+//const tileShuffle = document.getElementById("tileShuffle")
 
 // changes text in button to display rules  
 const howToPlay = document.getElementById("gameRules")
 howToPlay.onclick = function rules() {
    howToPlay.innerText = "Click on any tile to flip the card over. Choose another tile to look for a match. Matching tiles will stay flipped over, otherwise the tile will flip back. Keep clicking until you have matched all the tiles."
-}
-//  document.getElementsByClassName("displayRules")
-const startGame = document.getElementById("gameStart")
-const shuffleTiles = document.getElementById("tileShuffle")
 
-// flip tiles over on click
+
 const gameTiles = document.getElementsByClassName("tile")
 let gameTilesArray =[...gameTiles]
-//   these both return an array, if i grab by parent class it returns 0 items in the array
 
+// to start game
+const startGame = document.getElementById("gameStart")
+gameStart.onclick = shuffleTiles()
+
+function shuffleTiles (gameTilesArray) {
+    gameTilesArray.sort(() => Math.random()- 0.5);
+ }
+  shuffleTiles(gameTilesArray)
+
+//flip tiles on clicj
 for (let i = 0; i< gameTilesArray.length; i++) {
     gameTilesArray[i].addEventListener("click", flip)
 }
@@ -24,29 +30,57 @@ function flip(event) {
 }
 
 
+//  function that checks how many cards are clicked then
+// checks for match and flip backover or leave img side up if matched
+
+// function checkMatch (){
+//     const choiceOne = gameTilesArray[0]
+//     const choiceTwo = gameTilesArray[1]
+
+//     if (choiceOne === choiceTwo){
+//         //leave cards overturned
+//     } else {
+//         flip
+//     }
+// }
+// checkMatch()
+ 
+
+//if () {
+    //2 tiles are clicked
+
+    // check for match
+
+    // if match -> leave tiles turned
+    
+    // else -> flip tiles
+
+    //check if all tiles are matched
+
+ //let randomize = gameTiles
+
+//  function shuffleTiles(array) {
+//     let currentIndex = gameTilesArray.length, temporaryValue, randomIndex;
+//     while (0 !== currentIndex) {
+//       randomIndex = Math.floor(Math.random() * currentIndex);
+//       currentIndex -= 1;
+//       temporaryValue = gameTilesArray[currentIndex];
+//       gameTilesArray[currentIndex] = array[randomIndex];
+//       gameTilesArray[randomIndex] = temporaryValue;
+//     }
+//     return gameTilesArray;
+//   }
+// function shuffleTiles (gameTilesArray) {
+//     gameTilesArray.sort(() => Math.random()- 0.5);
+//  }
+//  shuffleTiles(gameTilesArray)
+//  console.log(shuffleTiles)
+ 
 
 
 
 
-// function to randomize tiles
-const randomize = ( )=>{
-    const backImage = getElementsByClassName("#back")
-    backImage.sort(() =>Math.random() *0.5)
-    return randomize
-    //console.log(randomize)
+
 }
-
-
 })
-//  check for match
-// if (flipped tiles are ===){
-//     leave backside up
-// } else if !=
-// flipTiles={}
-// if all tiles have matched 
-// display ServiceWorkerContainer
-// true = either remove tile or leave back side up
-// false = flip tile back over
-
-
 // thanks to https://aadaobi.medium.com/building-a-memory-matching-game-in-javascript-48e792c7b563 for the handy ...gameTiles array method on line 12
