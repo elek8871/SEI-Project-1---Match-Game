@@ -4,6 +4,7 @@
   box-sizing: border-box;  
 }
  body{
+    background-image: url ("images/img/icebackground.jpeg");
     background-color: lightsteelblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 } 
@@ -24,28 +25,16 @@ h1 {
  .gameScreen {
     display: flex;
  }
+
 /* container for game tiles */
 .gameTiles{
-    height: 1000px;
-    width: 1000px;
+    height: 800px;
+    width: 800px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
 }
 
-/* .gameTiles {
-    height: 100vh;
-    width: 1000px;
-    background-color: lightgreen;
-    display: flex;
-    gap: 10px;
-    gap: 10px 20px;
-    column-gap: 20px;
-    align-content: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-} */
 /* front face */
 .tile{
     width: calc(25% - 10px);
@@ -53,27 +42,10 @@ h1 {
     margin: 5px;
     position: relative;
     background-color: darkolivegreen;
+    border-radius: 5px;
 }
-    /*box-sizing: border-box; 
-    border-radius: 5px;
-    height: 180px;
-    width: 180px;
-    border: solid 1px white;
-    /* padding: 20px; */
-    /* display: inline-flex;
-    margin-left: 20px;  
-    position: relative; */
 
-
-/* display back when clicked */
- .back {
-   /* box-sizing: border-box;
-    border-radius: 5px;
-    width: 180px;
-    height: 180px;
-    padding: 20px;
-    border-radius: 5px;
-    display: inline-flex; */
+.back {
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -81,7 +53,7 @@ h1 {
     visibility: hidden;   
     transform: rotateY(180deg); 
 } 
-
+/* display back when clicked */
 .flipTile {
     background-color: violet;
     transform: rotateY(180deg);
@@ -98,9 +70,6 @@ h1 {
     
     
 }
-
-
-
 
 /* container for buttons */
 .gameButtons{
@@ -123,14 +92,7 @@ h1 {
     width: 150x;
     text-align: center;
 }
-    /* container */
- .gameBoard {
-  display: grid;
-  min-height: 100vh;
-  margin: 0;
-  grid-template-columns: 20%, 80%;
-  grid-template-rows: 100vh; 
-} 
+
 
 /* left side of screen */
 .gameButtons{
@@ -149,18 +111,3 @@ h1 {
     font-size: medium; 
    } 
 
-/* right side of screen */
-.gameTiles {
-    background-color: lightslategray;
-} 
-
-.eachTile{
-    background-color: darkolivegreen;
-    border-radius: 5px;
-    height: 120px;
-    width: 120px;
-    border: solid 2px white;
-    padding: 40px;
-} 
-
-/*  AFTER 2 HOURS I CANT FIGURE OUR GRID SO I AM GOING BACK TO THE ORIGINAL FLEXBOX */
