@@ -39,38 +39,42 @@ for (let i = 0; i< gameTiles.length; i++) {
     gameTiles[i].addEventListener("click", flip)
 }
 function flip(event) {
-    console.dir(event.target.children[0])
-   //  event.target.children[0].classList.toggle("flipTile")
+    console.log(event.target.children)
+   // event.target.children[0].classList.toggle("flipTile")
     event.target.children[0].classList.add("flipTile")
+    
 
    if (!hasFlippedTile) {
       hasFlippedTile = true;
-      firstCard = event.target.children[0];
+      firstTile = event.target.children[0];
       return;
    }
    secondTile =  event.target.children[0];
+   console.log(secondTile)
    hasFlippedTile = false;
 
-   checkforMatch ()
+   checkforMatch(firstTile, secondTile)
 }
 
-function checkforMatch (){
-   if (firstTile.dataset.framework === secondTile.dataset.framework) {
+function checkforMatch(firstImage, secondImage){
+   console.log(firstImage)
+   if (firstImage.src === secondImage.src) {
       disableCards()
+      console.log("it's a match")
       return
    }
-   unflipTiles ()
+   unflipTiles()
 }
  
 
-function disableCards () {
+function disableCards() {
    firstTile.removeEventListener("click",flip )
    secondTile.removeEventListener("click", flip)
 }
 
-function unflipTiles () {
-   setTimout (() =>{
-      firstTile.classList.remove ("flipTile")
+function unflipTiles() {
+   setTimeout (() =>{
+      firstTile.classList.remove("flipTile")
       secondTile.classList.remove("flipTile")
    }, 1000)
 }
