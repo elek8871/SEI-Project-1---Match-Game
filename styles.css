@@ -54,7 +54,7 @@ h1 {
     height: 150px;
     border-radius: 5px;
     display: inline-flex; 
-    visibility: hidden; 
+    /* visibility: hidden;  */
     transform: rotateY(180deg); 
 }
 

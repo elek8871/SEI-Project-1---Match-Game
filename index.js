@@ -6,28 +6,52 @@ document.addEventListener('DOMContentLoaded', () => {
 const howToPlay = document.getElementById("gameRules")
 howToPlay.onclick = function rules() {
    howToPlay.innerText = "Click on any tile to flip the card over. Choose another tile to look for a match. Matching tiles will stay flipped over, otherwise the tile will flip back. Keep clicking until you have matched all the tiles."
+}
 
-
-const gameTiles = document.getElementsByClassName("tile")
+const gameTiles = document.querySelectorAll(".tile")
 let gameTilesArray =[...gameTiles]
+const images = document.querySelectorAll(".back")
+const imageArray = [...images]
+console.log(images)
 
-// to start game
+// to start game button
 const startGame = document.getElementById("gameStart")
-gameStart.onclick = shuffleTiles()
+// gameStart.onclick = shuffleTiles()
 
-function shuffleTiles (gameTilesArray) {
-    gameTilesArray.sort(() => Math.random()- 0.5);
+function shuffleTiles () {
+   const array = imageArray.sort(() => Math.random()- 0.5)
+array.forEach(imageTest=> {
+console.log(imageTest.src)
+})
+   for (let i=0; i<gameTilesArray.length; i++) {
+    gameTilesArray[i].children[0].src = array[i].src
+
+   }
+ console.log("unique" ,gameTilesArray)
  }
-  shuffleTiles(gameTilesArray)
+  shuffleTiles()
 
-//flip tiles on clicj
-for (let i = 0; i< gameTilesArray.length; i++) {
-    gameTilesArray[i].addEventListener("click", flip)
+
+//flip tiles on click
+for (let i = 0; i< gameTiles.length; i++) {
+    gameTiles[i].addEventListener("click", flip)
 }
 function flip(event) {
     console.dir(event.target.children[0])
     event.target.children[0].classList.toggle("flipTile")
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //  function that checks how many cards are clicked then
@@ -81,6 +105,6 @@ function flip(event) {
 
 
 
-}
+
 })
 // thanks to https://aadaobi.medium.com/building-a-memory-matching-game-in-javascript-48e792c7b563 for the handy ...gameTiles array method on line 12
