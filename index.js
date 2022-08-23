@@ -1,27 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-//const tileShuffle = document.getElementById("tileShuffle")
+// variables
+
+//buttons
+const startGame = document.getElementById("gameStart")
+const tileShuffle = document.getElementById("tileShuffle")
+const howToPlay = document.getElementById("gameRules")
+// 
+const gameTiles = document.querySelectorAll(".tile")
+const gameTilesArray =[...gameTiles]
+const images = document.querySelectorAll(".back")
+const imageArray = [...images]
+let hasFlippedTile = false
+let firstTile, secondTile
+
 
 // changes text in button to display rules  
-const howToPlay = document.getElementById("gameRules")
 howToPlay.onclick = function rules() {
    howToPlay.innerText = "Click on any tile to flip the card over. Choose another tile to look for a match. Matching tiles will stay flipped over, otherwise the tile will flip back. Keep clicking until you have matched all the tiles."
 }
 
-const gameTiles = document.querySelectorAll(".tile")
-let gameTilesArray =[...gameTiles]
-const images = document.querySelectorAll(".back")
-const imageArray = [...images]
-console.log(images)
-
-// to start game button
-const startGame = document.getElementById("gameStart")
-// gameStart.onclick = shuffleTiles()
 
 function shuffleTiles () {
    const array = imageArray.sort(() => Math.random()- 0.5)
 array.forEach(imageTest=> {
-console.log(imageTest.src)
+ console.log(imageTest.src)
 })
    for (let i=0; i<gameTilesArray.length; i++) {
     gameTilesArray[i].children[0].src = array[i].src
@@ -31,18 +34,46 @@ console.log(imageTest.src)
  }
   shuffleTiles()
 
-
-//flip tiles on click
+// flip tiles on click
 for (let i = 0; i< gameTiles.length; i++) {
     gameTiles[i].addEventListener("click", flip)
 }
 function flip(event) {
     console.dir(event.target.children[0])
-    event.target.children[0].classList.toggle("flipTile")
+   //  event.target.children[0].classList.toggle("flipTile")
+    event.target.children[0].classList.add("flipTile")
+
+   if (!hasFlippedTile) {
+      hasFlippedTile = true;
+      firstCard = event.target.children[0];
+      return;
+   }
+   secondTile =  event.target.children[0];
+   hasFlippedTile = false;
+
+   checkforMatch ()
 }
 
+function checkforMatch (){
+   if (firstTile.dataset.framework === secondTile.dataset.framework) {
+      disableCards()
+      return
+   }
+   unflipTiles ()
+}
+ 
 
+function disableCards () {
+   firstTile.removeEventListener("click",flip )
+   secondTile.removeEventListener("click", flip)
+}
 
+function unflipTiles () {
+   setTimout (() =>{
+      firstTile.classList.remove ("flipTile")
+      secondTile.classList.remove("flipTile")
+   }, 1000)
+}
 
 
 

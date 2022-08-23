@@ -33,6 +33,7 @@ h1 {
     justify-content: center;
     
 }
+/* front face */
 .tile{
     background-color: darkolivegreen;
     box-sizing: border-box; 
@@ -45,7 +46,7 @@ h1 {
     margin-left: 20px;
     }
 
-
+/* display back when clicked */
 .back {
     position: absolute;
     box-sizing: border-box;
@@ -54,7 +55,7 @@ h1 {
     height: 150px;
     border-radius: 5px;
     display: inline-flex; 
-    /* visibility: hidden;  */
+    visibility: hidden;   
     transform: rotateY(180deg); 
 }
 
