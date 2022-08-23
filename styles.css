@@ -1,7 +1,12 @@
-body{
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;  
+}
+ body{
     background-color: lightsteelblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+} 
 /* top of screen */
 h1 {
     text-align: center;
@@ -20,7 +25,15 @@ h1 {
     display: flex;
  }
 /* container for game tiles */
-.gameTiles {
+.gameTiles{
+    height: 1000px;
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* .gameTiles {
     height: 100vh;
     width: 1000px;
     background-color: lightgreen;
@@ -32,40 +45,58 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     
-}
+} */
 /* front face */
 .tile{
+    width: calc(25% - 10px);
+    height: calc(25% -10px);
+    margin: 5px;
+    position: relative;
     background-color: darkolivegreen;
-    box-sizing: border-box; 
+}
+    /*box-sizing: border-box; 
     border-radius: 5px;
     height: 180px;
     width: 180px;
     border: solid 1px white;
-    padding: 20px;
-    display: inline-flex;
-    margin-left: 20px;
-    }
+    /* padding: 20px; */
+    /* display: inline-flex;
+    margin-left: 20px;  
+    position: relative; */
+
 
 /* display back when clicked */
-.back {
-    position: absolute;
-    box-sizing: border-box;
+ .back {
+   /* box-sizing: border-box;
     border-radius: 5px;
     width: 180px;
     height: 180px;
+    padding: 20px;
     border-radius: 5px;
-    display: inline-flex; 
+    display: inline-flex; */
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 5px;
     visibility: hidden;   
     transform: rotateY(180deg); 
-}
+} 
 
 .flipTile {
-    /* background-color: violet; */
+    background-color: violet;
     transform: rotateY(180deg);
     visibility: visible;
-    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    /* box-sizing: border-box;
+    border-radius: 5px;
     width: 180px;
     height: 180px;
+    display: inline-flexbox; */
+    
+    
 }
 
 
@@ -91,49 +122,24 @@ h1 {
     height: 100px;
     width: 150x;
     text-align: center;
-   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- /* container */
-/* .gameBoard {
+    /* container */
+ .gameBoard {
   display: grid;
   min-height: 100vh;
   margin: 0;
   grid-template-columns: 20%, 80%;
   grid-template-rows: 100vh; 
-} */
+} 
 
 /* left side of screen */
-/* .gameButtons{
+.gameButtons{
     background-color: hotpink;
     grid-column-start: 1px;
     grid-column-end: 200px;
-    }  */
+    }  
 
-/* .button{
+.button{
     background-color: aquamarine;
     padding: 28px 20px 30px 40px;
     border: 10px solid darkorange;
@@ -141,10 +147,10 @@ h1 {
     height: 100px;
     width: 180x;
     font-size: medium; 
-   } */
+   } 
 
 /* right side of screen */
-/* .gameTiles {
+.gameTiles {
     background-color: lightslategray;
 } 
 
@@ -155,6 +161,6 @@ h1 {
     width: 120px;
     border: solid 2px white;
     padding: 40px;
-} */
+} 
 
 /*  AFTER 2 HOURS I CANT FIGURE OUR GRID SO I AM GOING BACK TO THE ORIGINAL FLEXBOX */

@@ -32,7 +32,10 @@ array.forEach(imageTest=> {
    }
  console.log("unique" ,gameTilesArray)
  }
-  shuffleTiles()
+
+shuffleTiles()
+
+
 
 // flip tiles on click
 for (let i = 0; i< gameTiles.length; i++) {
