@@ -20,29 +20,13 @@ howToPlay.onclick = function rules() {
    howToPlay.innerText = "Click on any tile to flip the card over. Choose another tile to look for a match. Matching tiles will stay flipped over, otherwise the tile will flip back. Keep clicking until you have matched all the tiles."
 }
 
-function shuffleArray(){
-   for (let i = 0; i=gameTiles.length -1; i++){
-      let j= Math.floor(Math.random() - 0.5);
-      [gameTiles[i], gameTiles[j] = gameTiles[j],gameTiles[i]]
-      console.log("FYS" , gameTiles)
-   }
+function shuffle(){
+   gameTiles.forEach(gameTiles =>{
+      let randomImg = Math.floor(Math.random() *12)
+      gameTiles.style.order = randomImg
+   })
 }
- shuffleArray()
-// function shuffleTiles () {
-//    const array = imageArray.sort(() => Math.random()- 0.5)
-// array.forEach(imageTest=> {
-//  console.log(imageTest.src)
-// })
-//    for (let i=0; i<gameTilesArray.length; i++) {
-//     gameTilesArray[i].children[0].src = array[i].src
-
-//    }
-//  console.log("unique" ,gameTilesArray)
-//  }
-
-// shuffleTiles()
-
-
+shuffle()
 
 // flip tiles on click
 for (let i = 0; i< gameTiles.length; i++) {
