@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //buttons
 const startGame = document.getElementById("gameStart")
-const tileShuffle = document.getElementById("tileShuffle")
+const tileShuffle = document.getElementById("shuffle")
 const howToPlay = document.getElementById("gameRules")
 // 
 const gameTiles = document.querySelectorAll(".tile")
@@ -19,6 +19,8 @@ let firstTile, secondTile
 howToPlay.onclick = function rules() {
    howToPlay.innerText = "Click on any tile to flip the card over. Choose another tile to look for a match. Matching tiles will stay flipped over, otherwise the tile will flip back. Keep clicking until you have matched all the tiles."
 }
+tileShuffle.addEventListener("click",shuffle)
+startGame.addEventListener("click", shuffle)
 
 function shuffle(){
    gameTiles.forEach(gameTiles =>{
@@ -28,13 +30,13 @@ function shuffle(){
 }
 shuffle()
 
+
 // flip tiles on click
 for (let i = 0; i< gameTiles.length; i++) {
     gameTiles[i].addEventListener("click", flip)
 }
 function flip(event) {
     console.log(event.target.children)
-   // event.target.children[0].classList.toggle("flipTile")
     event.target.children[0].classList.add("flipTile")
     
 
@@ -70,7 +72,7 @@ function unflipTiles() {
    setTimeout (() =>{
       firstTile.classList.remove("flipTile")
       secondTile.classList.remove("flipTile")
-   }, 1000)
+   }, 500)
 }
 
 
