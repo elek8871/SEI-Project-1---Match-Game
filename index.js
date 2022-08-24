@@ -1,24 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
 
 // variables
-
-//buttons
+   //buttons
 const howToPlay = document.getElementById("gameRules")
 const startGame = document.getElementById("gameStart")
 const tileShuffle = document.getElementById("shuffle")
-
-//modals
+   //modals
 const rulesModal = document.getElementById("rulesModal")
 const rulesSpan = document.getElementsByClassName("close")[0]
 const startModal = document.getElementById("startModal")
 const startSpan = document.getElementsByClassName("start")[0]
-
-// game vars
+   // game vars
+const gameBoard = document.getElementById("gameTiles")
 const gameTiles = document.querySelectorAll(".tile")
 const gameTilesArray =[...gameTiles]
 const gameScreen = document.getElementById("gameTiles")
 let hasFlippedTile = false
 let firstTile, secondTile
+
 
 //rules modal
 howToPlay.onclick = function(){
@@ -45,13 +44,12 @@ window.onclick= function(event){
    startModal.style.display = "none"
    }
 }
+tileShuffle.onclick =function(){
+    window.location.reload();
+} 
 
-
-
-
+// shuffle
 tileShuffle.addEventListener("click",shuffle)
-
-
 function shuffle(){
    gameTiles.forEach(gameTiles =>{
       let randomImg = Math.floor(Math.random() *12)
@@ -59,7 +57,6 @@ function shuffle(){
    })
 }
 shuffle()
-
 
 // flip tiles on click
 for (let i = 0; i< gameTiles.length; i++) {
@@ -105,3 +102,5 @@ function unflipTiles() {
    }, 500)
 }
 })
+
+
