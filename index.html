@@ -21,7 +21,7 @@
         <div class = "gameScreen"> 
 
             <div class ="gameTiles">
-
+               
             <div class = "tile" id="tile1" >
                 <img class = "back" src = "images/img/skater-pic.jpeg" alt = "cartoon hockey player">
             </div>
@@ -75,7 +75,16 @@
          </div>
 
             <div class="gameButtons">
+                <!-- open modal -->
                 <button class="button" id="gameRules"> How To Play </button>
+                    <!-- modal -->
+                    <div id="rulesModal" class="rulesModal">
+                    <!-- content -->
+                    <div class ="rulesContent">
+                        <span class="close">&times;</span>
+                        <p>Select and two tiles to look for a match. Matching tiles will stay flipped over, otherwise the tiles will flip back. Keep trying until all tiles are matched</p>
+                    </div>
+                    </div>
                 <button class="button" id="gameStart"> Start Game </button> 
                 <button class="button" id="shuffle"> Shuffle Tiles </button>  
 
