@@ -17,7 +17,7 @@ let firstTile, secondTile
 
 // changes text in button to display rules  
 howToPlay.onclick = function rules() {
-   howToPlay.innerText = "Click on any tile to flip the card over. Choose another tile to look for a match. Matching tiles will stay flipped over, otherwise the tile will flip back. Keep clicking until you have matched all the tiles."
+   howToPlay.innerText = "Select and two tiles to look for a match. Matching tiles will stay flipped over, otherwise the tiles will flip back. Keep trying until all tiles are matched "
 }
 tileShuffle.addEventListener("click",shuffle)
 startGame.addEventListener("click", shuffle)
