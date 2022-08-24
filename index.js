@@ -3,12 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // variables
 
 //buttons
+const howToPlay = document.getElementById("gameRules")
 const startGame = document.getElementById("gameStart")
 const tileShuffle = document.getElementById("shuffle")
-const howToPlay = document.getElementById("gameRules")
+
 //modals
 const rulesModal = document.getElementById("rulesModal")
 const rulesSpan = document.getElementsByClassName("close")[0]
+const startModal = document.getElementById("startModal")
+const startSpan = document.getElementsByClassName("start")[0]
 
 // game vars
 const gameTiles = document.querySelectorAll(".tile")
@@ -29,6 +32,22 @@ window.onclick= function(event){
    rulesModal.style.display = "none"
    }
 }
+
+//start modal
+startGame.onclick = function(){
+   startModal.style.display = "block"
+}
+startSpan.onclick = function(){
+   startModal.style.display = "none"
+}
+window.onclick= function(event){
+   if(event.target === startModal){
+   startModal.style.display = "none"
+   }
+}
+
+
+
 
 tileShuffle.addEventListener("click",shuffle)
 
