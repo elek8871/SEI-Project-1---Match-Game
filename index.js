@@ -15,11 +15,10 @@ const gameBoard = document.getElementById("gameTiles")
 const gameTiles = document.querySelectorAll(".tile")
 const gameTilesArray =[...gameTiles]
 const gameScreen = document.getElementById("gameTiles")
-let winMsg = document.getElementsByClassName("header")
+let winMsg = document.querySelector(".header")
 let hasFlippedTile = false
 let firstTile, secondTile
 let score = 0
-
 
 //rules modal
 howToPlay.onclick = function(){
