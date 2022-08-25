@@ -59,7 +59,7 @@ h1 {
     height: 100%;
     padding: 20px;
     border-radius: 5px;
-    visibility: hidden; 
+    visibility: hidden;  
     transform: rotateY(180deg); 
 } 
 /* display back when clicked */

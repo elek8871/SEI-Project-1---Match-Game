@@ -15,6 +15,7 @@ const gameBoard = document.getElementById("gameTiles")
 const gameTiles = document.querySelectorAll(".tile")
 const gameTilesArray =[...gameTiles]
 const gameScreen = document.getElementById("gameTiles")
+let winMsg = document.getElementsByClassName("header")
 let hasFlippedTile = false
 let firstTile, secondTile
 let score = 0
@@ -46,12 +47,11 @@ window.onclick= function(event){
    }
 }
 // restart game
-// tileShuffle.onclick =function(){
-//    for (let i=0; i< gameTilesArray.length; i++){
-//       gameTilesArray[i].classList.add = ("back")
-//    }
-//     shuffle();
-//    } 
+tileShuffle.onclick =function(){
+   location.reload()
+    shuffle()
+}
+
 
 
 // shuffle
@@ -90,20 +90,22 @@ function checkforMatch(firstImage, secondImage){
    if (firstImage.src === secondImage.src) {
       disableCards()
       console.log("it's a match")
-      return
+      score +=1
    }else {
       unflipTiles()
    }
-    if (firstImage.src === firstImage.src){
-      score += 1
-      console.log ("same card  was chosen")
-    }
+   //  if (firstImage.src === firstImage.src){
+   //    score += 1
+   
+   //  }
    }
    function checkForWIn(){
    if (score === 8){
       console.log("you win")
-   }
+      winMsg.innerText = " 🏒 YOU WIN 🏒"
+    }
 }
+
 function disableCards() {
    firstTile.removeEventListener("click",flip )
    secondTile.removeEventListener("click", flip)
@@ -116,9 +118,5 @@ function unflipTiles() {
    }, 500)
 }
 
-//  function to display game win msg
-// if the matched tiles are equal to the array length
-// or if matched pairs are = 1/2 array length
-// display you win
 
 })
