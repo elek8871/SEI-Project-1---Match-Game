@@ -104,6 +104,7 @@ function checkforMatch(firstImage, secondImage){
    function checkForWIn(){
    if (score === 8){
       console.log("you win")
+    
       winMsg.innerText = " 🏒 YOU WIN 🏒"
     }
 }
