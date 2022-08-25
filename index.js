@@ -45,13 +45,14 @@ window.onclick= function(event){
    startModal.style.display = "none"
    }
 }
+
+
+
 // restart game
 tileShuffle.onclick =function(){
    location.reload()
     shuffle()
 }
-
-
 
 // shuffle
 function shuffle(){
@@ -69,41 +70,30 @@ for (let i = 0; i< gameTiles.length; i++) {
 function flip(event) {
     console.log(event.target.children)
     event.target.children[0].classList.add("flipTile")
-    
-
+   
    if (!hasFlippedTile) {
       hasFlippedTile = true;
       firstTile = event.target.children[0];
       return;
    }
    secondTile =  event.target.children[0];
-   console.log(secondTile)
    hasFlippedTile = false;
 
    checkforMatch(firstTile, secondTile)
 
    checkForWIn()
-
 }
 
 function checkforMatch(firstImage, secondImage){
-   console.log(firstImage)
    if (firstImage.src === secondImage.src) {
       disableCards()
-      console.log("it's a match")
       score +=1
    }else {
       unflipTiles()
-   }
-   //  if (firstImage.src === firstImage.src){
-   //    score += 1
-   
-   //  }
+   } 
    }
    function checkForWIn(){
    if (score === 8){
-      console.log("you win")
-    
       winMsg.innerText = " 🏒 YOU WIN 🏒"
     }
 }
