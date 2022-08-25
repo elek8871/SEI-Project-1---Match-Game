@@ -12,18 +12,20 @@
 
 # MVP
 --- 
-- ##### Create an interactive game screen
-- ##### Render game screen that will contain:
-- ##### [x ] A button which when pressed will supply game direction. 
- ###### This was originally done by changing the inner text of my button. I changed it to a modal and I think it looks much more professional
-- ##### [x ] A button to start the game
- ######  this refreshes the screen and displays a how to play modal
-- ##### [~~ ] A button to reshuffle/restart the game
-######   8/25: this is currently doing the same as the start game button, I haven't been succesful in getting the modal to not pop up.
-- ##### [x ] A set of tiles that will flip over on click
-######   this was more difficult than I thought.Initailly the cards were shuffling but not the images, even though they were in the same div. Changed the code to tiles.forEach and that fixed it.
-- ##### [x ] The tiles will have varying colors on the back side
-######   I actually decided to use images from the get go. 
+- #### Create an interactive game screen
+- #### Render game screen that will contain:
+- #### [x] A button which when pressed will supply game direction. 
+  This was originally done by changing the inner text of my button. I changed it to a modal and I think it looks much more professional
+- #### [x] A button to start the game : refreshes the screen and displays a how to play modal
+- #### [~] A button to reshuffle/restart the game
+  8/25: Currently has the same functionality as start game button, I haven't been succesful in getting the modal to not pop up.
+- ##### [x] A set of tiles that will flip over on click
+  Initailly the cards array was shuffling but not the images, even though they were in the same div. Changed the code to tiles.forEach and that fixed it.
+- #### [x] The tiles will have varying colors on the back side
+  I actually decided to use images from the get go. 
+- #### [x] display a win message. 
+  I accomplished this by changing the header text
+
 
 
 ---
