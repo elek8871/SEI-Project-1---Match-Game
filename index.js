@@ -44,12 +44,14 @@ window.onclick= function(event){
    startModal.style.display = "none"
    }
 }
+// restart game
 tileShuffle.onclick =function(){
     window.location.reload();
+   
 } 
 
+
 // shuffle
-tileShuffle.addEventListener("click",shuffle)
 function shuffle(){
    gameTiles.forEach(gameTiles =>{
       let randomImg = Math.floor(Math.random() *12)
@@ -85,10 +87,14 @@ function checkforMatch(firstImage, secondImage){
       disableCards()
       console.log("it's a match")
       return
+   }else {
+      unflipTiles()
    }
-   unflipTiles()
+    if (firstImage.src === firstImage.src){
+      return
+      console.log ("same card  was chosen")
+   }
 }
- 
 
 function disableCards() {
    firstTile.removeEventListener("click",flip )
@@ -101,6 +107,12 @@ function unflipTiles() {
       secondTile.classList.remove("flipTile")
    }, 500)
 }
+
+
+ function endGame(){
+//  if 12 cards matched === 12
+if (hasFlippedTile === 12)
+console.log('endgame')
+}
+endGame
 })
-
-
