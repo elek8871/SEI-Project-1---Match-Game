@@ -15,8 +15,10 @@ const gameBoard = document.getElementById("gameTiles")
 const gameTiles = document.querySelectorAll(".tile")
 const gameTilesArray =[...gameTiles]
 const gameScreen = document.getElementById("gameTiles")
+let winMsg = document.getElementsByClassName("header")
 let hasFlippedTile = false
 let firstTile, secondTile
+let score = 0
 
 
 //rules modal
@@ -46,9 +48,10 @@ window.onclick= function(event){
 }
 // restart game
 tileShuffle.onclick =function(){
-    window.location.reload();
-   
-} 
+   location.reload()
+    shuffle()
+}
+
 
 
 // shuffle
@@ -79,7 +82,9 @@ function flip(event) {
    hasFlippedTile = false;
 
    checkforMatch(firstTile, secondTile)
-  
+
+   checkForWIn()
+
 }
 
 function checkforMatch(firstImage, secondImage){
@@ -87,14 +92,20 @@ function checkforMatch(firstImage, secondImage){
    if (firstImage.src === secondImage.src) {
       disableCards()
       console.log("it's a match")
-      return
+      score +=1
    }else {
       unflipTiles()
    }
-    if (firstImage.src === firstImage.src){
-      return
-      console.log ("same card  was chosen")
+   //  if (firstImage.src === firstImage.src){
+   //    score += 1
+   
+   //  }
    }
+   function checkForWIn(){
+   if (score === 8){
+      console.log("you win")
+      winMsg.innerText = " 🏒 YOU WIN 🏒"
+    }
 }
 
 function disableCards() {
@@ -108,5 +119,6 @@ function unflipTiles() {
       secondTile.classList.remove("flipTile")
    }, 500)
 }
+
 
 })
