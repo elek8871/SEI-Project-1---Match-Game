@@ -79,6 +79,7 @@ function flip(event) {
    hasFlippedTile = false;
 
    checkforMatch(firstTile, secondTile)
+  
 }
 
 function checkforMatch(firstImage, secondImage){
@@ -108,11 +109,4 @@ function unflipTiles() {
    }, 500)
 }
 
-
- function endGame(){
-//  if 12 cards matched === 12
-if (hasFlippedTile === 12)
-console.log('endgame')
-}
-endGame
 })
