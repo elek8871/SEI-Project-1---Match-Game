@@ -35,5 +35,9 @@
 - ##### Add graphic or images on the tiles - Imgs were added in the beginning stages
 - ##### Allow the user to choose between different tile designs
 
+# Post game reflections
+##### In retropspect I wished I had used object based programing.I think it would have made it easier to flip cards and shuffle. If I go back and add decks I may switch.
+##### I feel like I really improved my CSS skills and am very happy with the way the game looks
+
 ###### I used this tutorial as a reference point:
 https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae
