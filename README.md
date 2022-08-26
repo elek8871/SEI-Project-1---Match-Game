@@ -36,7 +36,7 @@
 - ##### Allow the user to choose between different tile designs
 
 # Post game reflections
-##### In retropspect I wished I had used oop.I think it would have made it easier to flip cards and shuffle. If I go back and add decks I may switch.
+##### In retropspect I wished I had used OOP.I think it would have made it easier to flip cards and shuffle. If I go back and add decks I may switch.
 ##### I feel like I really improved my CSS skills and am very happy with the way the game looks
 
 ###### I used this tutorial as a reference point:
